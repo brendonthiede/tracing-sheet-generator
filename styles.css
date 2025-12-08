@@ -1,0 +1,196 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Controls */
+.controls {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Output Container */
+.output-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.output-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.output-text {
+    font-size: 48px;
+    line-height: 1.8;
+    color: #333;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .screen-only {
+        display: none !important;
+    }
+
+    .output-container {
+        display: block !important;
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    .output-title {
+        color: #000;
+        font-size: 36px;
+        margin-bottom: 40px;
+        /* Title prints normally */
+        font-weight: bold;
+    }
+
+    .output-text {
+        color: transparent;
+        font-size: 72px;
+        line-height: 2.5;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        letter-spacing: 3px;
+        /* Tracing sheet effect - dashed outline */
+        -webkit-text-stroke: 2px #888;
+        text-stroke: 2px #888;
+        /* Add dashed effect */
+        background: repeating-linear-gradient(
+            90deg,
+            #888 0px,
+            #888 8px,
+            transparent 8px,
+            transparent 12px
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    /* Alternative tracing effect using shadows for better compatibility */
+    .output-text {
+        text-shadow: 
+            -1px -1px 0 #bbb,
+            1px -1px 0 #bbb,
+            -1px 1px 0 #bbb,
+            1px 1px 0 #bbb,
+            -2px -2px 0 #ddd,
+            2px -2px 0 #ddd,
+            -2px 2px 0 #ddd,
+            2px 2px 0 #ddd;
+    }
+
+    /* Page break settings */
+    .output-text {
+        page-break-inside: avoid;
+    }
+}
+
+/* Screen-only class for print hiding */
+.screen-only {
+    display: block;
+}
