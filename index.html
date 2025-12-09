@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracing Sheet Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container screen-only">
+        <h1>Tracing Sheet Generator</h1>
+        <form id="tracingForm">
+            <div class="form-group">
+                <label for="titleInput">Title (optional):</label>
+                <input type="text" id="titleInput" name="title" placeholder="Enter a title for your tracing sheet">
+            </div>
+            <div class="form-group">
+                <label for="textInput">Text to trace:</label>
+                <textarea id="textInput" name="text" rows="5" placeholder="Enter the text you want to practice tracing" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Generate Tracing Sheet</button>
+        </form>
+    </div>
+
+    <div id="output" class="output-container" style="display: none;">
+        <div id="outputTitle" class="output-title"></div>
+        <div id="outputText" class="output-text"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
