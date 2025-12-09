@@ -26,15 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
             outputTitle.textContent = title;
             outputTitle.style.display = 'block';
         } else {
+            outputTitle.textContent = '';
             outputTitle.style.display = 'none';
         }
         
         outputText.textContent = text;
 
-        // Hide form and show output with controls
-        container.style.display = 'none';
-        outputDiv.style.display = 'block';
-        controls.style.display = 'block';
+        window.print();
     });
 
     printBtn.addEventListener('click', function() {
